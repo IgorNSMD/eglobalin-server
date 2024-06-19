@@ -1,6 +1,6 @@
 const { response } = require('express')
 
-const Supplier = require('../../admin/models/Supplier')
+const Supplier = require('../models/Supplier') //require('../../admin/models/Supplier')
 
 const getSuppliers = async ( req, res = response ) => {
     console.log('getSuppliers...')

@@ -1,7 +1,7 @@
 const { response } = require('express')
 const { validationResult } = require('express-validator')
 
-const Products = require('../../admin/models/Product') 
+const Products = require('../models/Product')  //require('../../admin/models/Product') 
 
 const multer = require('multer');
 const shortid = require('shortid');
@@ -100,9 +100,9 @@ exports.getProduct = async (req,res, next) => {
 
 // update product by ID
 exports.updProduct = async (req,res,next) => {
-    console.log('update product...')
+    
     try {
-
+        console.log('update product...')
         let previousProduct = await Products.findById(req.params.id);
 
         let newProduct = req.body;
