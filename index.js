@@ -5,7 +5,7 @@ const bodyParse = require('body-parser')
 require('dotenv').config()
 const cors = require('cors')
 
-const { dbConnection } = require('./database/config')
+const { dbConnection } = require('./projects/admin/database/config') //require('./database/config')
 
 //console.log(process.env)
 
