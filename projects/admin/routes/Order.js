@@ -28,5 +28,6 @@ router.put('/:id',
 // delete customer
 router.delete('/:id', 
     delOrder)    
+    
 
 module.exports = router
