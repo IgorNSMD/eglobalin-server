@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
 app.use('/api/admin/products', require('./projects/admin/routes/product') ) //require('./routes/product') )
 app.use('/api/admin/customers', require('./projects/admin/routes/customer') ) //require('./routes/product') )
 app.use('/api/admin/orders', require('./projects/admin/routes/order') ) //require('./routes/product') )
+app.use('/api/admin/auth', require('./projects/admin/routes/auth') ) //require('./routes/product') )
 
 //escuchar peticiones
 app.listen(process.env.PORT,()=> {
