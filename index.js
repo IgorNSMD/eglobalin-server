@@ -36,6 +36,8 @@ app.use('/api/admin/customers', require('./projects/admin/routes/customer') ) //
 app.use('/api/admin/orders', require('./projects/admin/routes/order') ) //require('./routes/product') )
 app.use('/api/admin/auth', require('./projects/admin/routes/auth') ) //require('./routes/product') )
 
+app.use('/api/admin/categories', require('./projects/admin/routes/category') ) //require('./routes/product') )
+
 //escuchar peticiones
 app.listen(process.env.PORT,()=> {
     console.log('Servidor en puerto 8080...')

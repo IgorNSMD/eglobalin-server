@@ -12,6 +12,11 @@ const productSchema = new Schema({
     },
     image: {
         type: String
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category',
+        required: false // Hacemos que la categoría sea opcional
     }
 })
 

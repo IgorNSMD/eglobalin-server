@@ -74,7 +74,7 @@ exports.addProduct = async(req,res) => {
 exports.getProducts = async (req,res, next) => {
     try {
 
-        const products = await Products.find({})
+        const products = await Products.find({}).populate('category');
         res.json(products)
         
     } catch (error) {
@@ -86,7 +86,7 @@ exports.getProducts = async (req,res, next) => {
 
 //Get Product specifically by id
 exports.getProduct = async (req,res, next) => {
-    const product = await Products.findById(req.params.id)
+    const product = await Products.findById(req.params.id).populate('category');
 
     if (!product){
         res.json({msg: 'Product not exists...'})
@@ -117,7 +117,7 @@ exports.updProduct = async (req,res,next) => {
         let product = await Products.findOneAndUpdate({ _id:req.params.id },
             newProduct, {
                 new: true
-            });
+            }).populate('category');
         res.json(product)
     } catch (error) {
         // if there any error

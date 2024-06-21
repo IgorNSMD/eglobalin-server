@@ -1,4 +1,4 @@
-const Customers = require('../models/Customers')
+const Customers = require('../models/Customer')
 
 //Add new Customer
 exports.addCustomer = async(req,res) => {
