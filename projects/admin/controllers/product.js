@@ -10,7 +10,7 @@ const settingMulter = {
     limits : { fileSize : 100000 },
     storage: fileStorage = multer.diskStorage({
         destination: (req, file, next) => {
-            next(null, __dirname+'/../uploads/'); //'/../uploads/');
+            next(null, __dirname+'../../../../uploads/'); //'/../uploads/');
         },
         filename : (req, file, next) => {
             const extension = file.mimetype.split('/')[1];

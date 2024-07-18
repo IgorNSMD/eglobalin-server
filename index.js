@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParse = require('body-parser')
-
+const path = require('path');
 
 require('dotenv').config()
 const cors = require('cors')
@@ -38,7 +38,13 @@ app.use('/api/admin/auth', require('./projects/admin/routes/auth') ) //require('
 
 app.use('/api/admin/categories', require('./projects/admin/routes/category') ) //require('./routes/product') )
 
+
+// Ruta para servir archivos estáticos
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
+//app.use(express.static('uploads'));
+
 //escuchar peticiones
 app.listen(process.env.PORT,()=> {
-    console.log('Servidor en puerto 8080...')
+    console.log(`Server running at http://localhost:${process.env.PORT}`)
 })
